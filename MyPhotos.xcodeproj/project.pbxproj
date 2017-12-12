@@ -14,6 +14,7 @@
 		D2248D631FDFC93B005A3797 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2248D611FDFC93B005A3797 /* LaunchScreen.storyboard */; };
 		D2248D6E1FDFC93B005A3797 /* MyPhotosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2248D6D1FDFC93B005A3797 /* MyPhotosTests.swift */; };
 		D2248D791FDFC93B005A3797 /* MyPhotosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2248D781FDFC93B005A3797 /* MyPhotosUITests.swift */; };
+		D22A49641FE04514004ABE3F /* ViewPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22A49631FE04514004ABE3F /* ViewPhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D2248D741FDFC93B005A3797 /* MyPhotosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPhotosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2248D781FDFC93B005A3797 /* MyPhotosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPhotosUITests.swift; sourceTree = "<group>"; };
 		D2248D7A1FDFC93B005A3797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D22A49631FE04514004ABE3F /* ViewPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewPhoto.swift; path = ../ViewPhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				D2248D5A1FDFC93B005A3797 /* ViewController.swift */,
 				D2248D5C1FDFC93B005A3797 /* Main.storyboard */,
 				D2248D5F1FDFC93B005A3797 /* Assets.xcassets */,
+				D22A49631FE04514004ABE3F /* ViewPhoto.swift */,
 				D2248D611FDFC93B005A3797 /* LaunchScreen.storyboard */,
 				D2248D641FDFC93B005A3797 /* Info.plist */,
 			);
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2248D5B1FDFC93B005A3797 /* ViewController.swift in Sources */,
+				D22A49641FE04514004ABE3F /* ViewPhoto.swift in Sources */,
 				D2248D591FDFC93B005A3797 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +509,7 @@
 				D2248D7F1FDFC93B005A3797 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2248D801FDFC93B005A3797 /* Build configuration list for PBXNativeTarget "MyPhotosTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +518,7 @@
 				D2248D821FDFC93B005A3797 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2248D831FDFC93B005A3797 /* Build configuration list for PBXNativeTarget "MyPhotosUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +527,7 @@
 				D2248D851FDFC93B005A3797 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
