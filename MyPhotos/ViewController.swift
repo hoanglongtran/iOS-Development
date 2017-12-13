@@ -9,9 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    let data:[String] = ["Item 1", "Item 2", "Item 3", "Item A"]
+    let data:[String] = ["Item 1", "Item 2", "Item 3", "Item A", "Item B"]
     
-    let photoName:[String] = ["Sayori's Death", "Dead Space", "Lara's Death", "Black Hole"]
+    let photoName:[String] = ["Sayori's Death", "Dead Space", "Lara's Death", "Black Hole", "Cate"]
     
     let headers:[String] = ["Numbered", "Lettered"]
     
@@ -40,8 +40,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let viewPhoto = segue.destination as! ViewPhoto
-        viewPhoto.name = temp
-        
+        viewPhoto.currentPhotoName = temp
+        viewPhoto.photoList = photoName
     }
     
     //func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

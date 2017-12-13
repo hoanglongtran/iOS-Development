@@ -101,9 +101,9 @@
 			children = (
 				D2248D581FDFC93B005A3797 /* AppDelegate.swift */,
 				D2248D5A1FDFC93B005A3797 /* ViewController.swift */,
+				D22A49631FE04514004ABE3F /* ViewPhoto.swift */,
 				D2248D5C1FDFC93B005A3797 /* Main.storyboard */,
 				D2248D5F1FDFC93B005A3797 /* Assets.xcassets */,
-				D22A49631FE04514004ABE3F /* ViewPhoto.swift */,
 				D2248D611FDFC93B005A3797 /* LaunchScreen.storyboard */,
 				D2248D641FDFC93B005A3797 /* Info.plist */,
 			);
