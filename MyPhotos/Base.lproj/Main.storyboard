@@ -45,9 +45,11 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="tBM-nE-8Zk"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Few-WD-z5b">
-                                <frame key="frameInset" height="44"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Few-WD-z5b">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="xYR-gL-Xke"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="My Photos" id="c0q-KS-QYR"/>
                                 </items>
@@ -55,12 +57,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Nbx-t1-IKf" secondAttribute="trailing" id="9HM-S6-mcV"/>
-                            <constraint firstItem="Nbx-t1-IKf" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="OhD-KR-vpE"/>
-                            <constraint firstItem="Nbx-t1-IKf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="cJX-DL-fql"/>
-                            <constraint firstItem="Nbx-t1-IKf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dmg-gr-DqA"/>
-                            <constraint firstItem="Nbx-t1-IKf" firstAttribute="trailing" secondItem="Few-WD-z5b" secondAttribute="trailing" id="hZG-PC-V9t"/>
-                            <constraint firstItem="Nbx-t1-IKf" firstAttribute="leading" secondItem="Few-WD-z5b" secondAttribute="leading" id="yfh-Rs-LQN"/>
+                            <constraint firstItem="Nbx-t1-IKf" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="ROC-0b-abD"/>
+                            <constraint firstItem="Few-WD-z5b" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Sdn-rP-7bt"/>
+                            <constraint firstItem="Nbx-t1-IKf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Vbv-Od-s97"/>
+                            <constraint firstItem="Nbx-t1-IKf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ck6-2i-eC9"/>
+                            <constraint firstItem="Nbx-t1-IKf" firstAttribute="leading" secondItem="Few-WD-z5b" secondAttribute="leading" id="fAe-Wp-FUs"/>
+                            <constraint firstAttribute="trailing" secondItem="Nbx-t1-IKf" secondAttribute="trailing" id="sgs-aI-oOd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Photos" id="Zhl-bo-IJJ"/>
@@ -87,7 +89,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3AJ-m4-3uh">
                                 <gestureRecognizers/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M8R-T5-F26">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mw-c6-uDy">
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.41065140849999998" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eGD-RK-wzU">
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.41065140849999998" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -96,16 +104,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="eGD-RK-wzU" firstAttribute="bottom" secondItem="7Mw-c6-uDy" secondAttribute="bottom" id="7k7-QV-66V"/>
                             <constraint firstAttribute="trailing" secondItem="3AJ-m4-3uh" secondAttribute="trailing" id="88y-kP-4NF"/>
-                            <constraint firstItem="jiv-Rm-9dS" firstAttribute="top" secondItem="M8R-T5-F26" secondAttribute="bottom" constant="117" id="FB0-Ki-SuA"/>
+                            <constraint firstItem="jiv-Rm-9dS" firstAttribute="top" secondItem="7Mw-c6-uDy" secondAttribute="bottom" constant="129" id="Gby-cM-Hbw"/>
                             <constraint firstItem="3AJ-m4-3uh" firstAttribute="bottom" secondItem="jiv-Rm-9dS" secondAttribute="top" id="TXh-FF-pfn"/>
+                            <constraint firstItem="7Mw-c6-uDy" firstAttribute="trailing" secondItem="3AJ-m4-3uh" secondAttribute="trailing" id="TdK-By-OVZ"/>
                             <constraint firstItem="3AJ-m4-3uh" firstAttribute="leading" secondItem="0Ww-Zq-4jK" secondAttribute="leading" id="YXm-Ws-cWG"/>
                             <constraint firstItem="3AJ-m4-3uh" firstAttribute="top" secondItem="0Ww-Zq-4jK" secondAttribute="topMargin" id="aga-fo-jvP"/>
-                            <constraint firstItem="M8R-T5-F26" firstAttribute="leading" secondItem="3AJ-m4-3uh" secondAttribute="leading" id="cxO-c1-j3c"/>
-                            <constraint firstItem="M8R-T5-F26" firstAttribute="trailing" secondItem="3AJ-m4-3uh" secondAttribute="trailing" id="tRN-uU-1G6"/>
+                            <constraint firstItem="7Mw-c6-uDy" firstAttribute="leading" secondItem="3AJ-m4-3uh" secondAttribute="leading" id="oLR-iq-Jxx"/>
+                            <constraint firstItem="eGD-RK-wzU" firstAttribute="leading" secondItem="7Mw-c6-uDy" secondAttribute="leading" id="swH-A6-tS8"/>
+                            <constraint firstItem="eGD-RK-wzU" firstAttribute="trailing" secondItem="7Mw-c6-uDy" secondAttribute="trailing" id="u56-Ha-dBg"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lbl" destination="7Mw-c6-uDy" id="IVR-v7-zxH"/>
+                        <outlet property="textF" destination="eGD-RK-wzU" id="DSx-pr-uD2"/>
                         <outlet property="viewPhoto" destination="3AJ-m4-3uh" id="AMZ-kT-bm3"/>
                     </connections>
                 </viewController>
@@ -119,7 +132,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zoo-H5-ejt" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SIG-fZ-ekg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SIG-fZ-ekg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -9,13 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    let data:[String] = ["Item 1", "Item 2", "Item 3", "Item A", "Item B"]
+    var photoDes:[String] = []
     
-    let photoName:[String] = ["Sayori's Death", "Dead Space", "Lara's Death", "Black Hole", "Cate"]
+    var photoName:[String] = ["Sayori's Death", "Dead Space", "Lara's Death", "Black Hole", "Cate"]
     
-    let headers:[String] = ["Numbered", "Lettered"]
+    //let headers:[String] = ["Numbered", "Lettered"]
     
     var temp:String = ""
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        photoDes = Array(repeating: "", count: photoName.count)
+        return photoDes.count
     }
     
     //func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,7 +35,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = data[indexPath.row]
+        cell.textLabel?.text = photoDes[indexPath.row]
         cell.imageView?.image = UIImage(named: photoName[indexPath.row])
         
         return cell
