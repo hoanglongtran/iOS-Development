@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var photoDes:[String] = []
+    static var photoDes:[String] = []
     
     var photoName:[String] = ["Sayori's Death", "Dead Space", "Lara's Death", "Black Hole", "Cate"]
     
@@ -25,8 +25,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        photoDes = Array(repeating: "", count: photoName.count)
-        return photoDes.count
+        ViewController.photoDes = Array(repeating: "Your Description", count: photoName.count)
+        return ViewController.photoDes.count
     }
     
     //func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,7 +35,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = photoDes[indexPath.row]
+        cell.textLabel?.text = ViewController.photoDes[indexPath.row]
         cell.imageView?.image = UIImage(named: photoName[indexPath.row])
         
         return cell

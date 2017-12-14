@@ -15,7 +15,7 @@ class ViewPhoto: UIViewController, UITextFieldDelegate {
     var maxImages: Int = 0
     var imageIndex: NSInteger = 0
     var currentPhotoName = String()
-    let photoDescription = [String]()
+    
     @IBOutlet weak var viewPhoto: UIImageView!
     @IBOutlet weak var textF: UITextField!
     @IBOutlet weak var lbl: UILabel!
@@ -46,8 +46,10 @@ class ViewPhoto: UIViewController, UITextFieldDelegate {
         maxImages = photoList.count - 1
         viewPhoto.image = UIImage(named: currentPhotoName)
         imageIndex  = photoList.index(of: currentPhotoName)!
+        //let myVC = storyboard?.instantiateViewController(withIdentifier: "ViewPhoto") as! ViewPhoto
         
-        lbl.text = photoDescription[imageIndex]
+        
+        lbl.text = ViewController.photoDes[imageIndex]
         textF.delegate = self
         textF.isHidden = true
         lbl.isUserInteractionEnabled = true
@@ -78,8 +80,8 @@ class ViewPhoto: UIViewController, UITextFieldDelegate {
         userText.resignFirstResponder()
         textF.isHidden = true
         lbl.isHidden = false
-        photoDescription[imageIndex] = textF.text!
-        lbl.text = photoDescription[imageIndex]
+        lbl.text = textF.text
+        ViewController.photoDes[imageIndex] = textF.text!
         return true
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -106,7 +108,7 @@ class ViewPhoto: UIViewController, UITextFieldDelegate {
                 }
                 
                 viewPhoto.image = UIImage(named: photoList[imageIndex])
-                
+                lbl.text = ViewController.photoDes[imageIndex]
                 
             case UISwipeGestureRecognizerDirection.left:
                 //println("User swiped Left")
@@ -124,7 +126,7 @@ class ViewPhoto: UIViewController, UITextFieldDelegate {
                 }
                 
                 viewPhoto.image = UIImage(named: photoList[imageIndex])
-                
+                lbl.text = ViewController.photoDes[imageIndex]
             default:
                 break //stops the code/codes nothing.
             }
