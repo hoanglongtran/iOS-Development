@@ -11,11 +11,11 @@
 import UIKit
 
 class ViewPhoto: UIViewController, UITextFieldDelegate {
-    var photoList:[String] = []
+    var photoList:[UIImage] = []
     var photoNumb:Int = 0
     var maxImages: Int = 0
     var imageIndex: NSInteger = 0
-    var currentPhotoName = String()
+    var currentPhoto:UIImage = UIImage()
     
     @IBOutlet weak var viewPhoto: UIImageView!
     @IBOutlet weak var textF: UITextField!
@@ -44,8 +44,8 @@ class ViewPhoto: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         maxImages = photoList.count - 1
-        viewPhoto.image = UIImage(named: currentPhotoName)
-        imageIndex  = photoList.index(of: currentPhotoName)!
+        viewPhoto.image = currentPhoto
+        imageIndex  = photoList.index(of: currentPhoto)!
         //let myVC = storyboard?.instantiateViewController(withIdentifier: "ViewPhoto") as! ViewPhoto
         
         
@@ -103,7 +103,7 @@ class ViewPhoto: UIViewController, UITextFieldDelegate {
                     //go to the last photo if the current photo is the first one and user swipes right
                 }
                 
-                viewPhoto.image = UIImage(named: photoList[imageIndex])
+                viewPhoto.image = photoList[imageIndex]
                 textF.text = ViewController.photoDes[imageIndex]
                 
             case UISwipeGestureRecognizerDirection.left:
@@ -121,7 +121,7 @@ class ViewPhoto: UIViewController, UITextFieldDelegate {
                     //go to the first photo if the current photo is the last one and user swipes left
                 }
                 
-                viewPhoto.image = UIImage(named: photoList[imageIndex])
+                viewPhoto.image = photoList[imageIndex]
                 textF.text = ViewController.photoDes[imageIndex]
             default:
                 break //stops the code/codes nothing.

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -74,6 +73,9 @@
                             <constraint firstAttribute="trailing" secondItem="Gwr-Tq-Drn" secondAttribute="trailing" id="wdD-Zw-mdt"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="trash" id="g9x-Z3-Hil"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="My Photos" id="Zhl-bo-IJJ">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="XED-52-xKV">
                             <connections>
@@ -81,6 +83,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="Gwr-Tq-Drn" id="4oG-Od-05c"/>
                         <segue destination="TeT-zI-1LX" kind="show" identifier="segue" id="r0C-8B-0cc"/>
@@ -88,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="511.19999999999999" y="116.49175412293854"/>
+            <point key="canvasLocation" x="542" y="116"/>
         </scene>
         <!--View Photo-->
         <scene sceneID="9id-ZQ-ymV">
@@ -102,27 +105,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3AJ-m4-3uh">
-                                <gestureRecognizers/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eGD-RK-wzU">
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.41065140849999998" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3AJ-m4-3uh">
+                                <gestureRecognizers/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eGD-RK-wzU" firstAttribute="trailing" secondItem="3AJ-m4-3uh" secondAttribute="trailing" id="0EV-0e-80A"/>
-                            <constraint firstAttribute="trailing" secondItem="3AJ-m4-3uh" secondAttribute="trailing" id="88y-kP-4NF"/>
+                            <constraint firstItem="3AJ-m4-3uh" firstAttribute="leading" secondItem="eGD-RK-wzU" secondAttribute="leading" id="1Xc-LT-DXv"/>
+                            <constraint firstItem="3AJ-m4-3uh" firstAttribute="leading" secondItem="0Ww-Zq-4jK" secondAttribute="leading" id="7c1-SR-OXq"/>
                             <constraint firstItem="eGD-RK-wzU" firstAttribute="top" secondItem="mfv-LM-gpT" secondAttribute="bottom" constant="374" id="C6u-rA-8NU"/>
-                            <constraint firstItem="3AJ-m4-3uh" firstAttribute="bottom" secondItem="jiv-Rm-9dS" secondAttribute="top" id="TXh-FF-pfn"/>
-                            <constraint firstItem="3AJ-m4-3uh" firstAttribute="leading" secondItem="0Ww-Zq-4jK" secondAttribute="leading" id="YXm-Ws-cWG"/>
-                            <constraint firstItem="3AJ-m4-3uh" firstAttribute="top" secondItem="0Ww-Zq-4jK" secondAttribute="topMargin" id="aga-fo-jvP"/>
-                            <constraint firstItem="eGD-RK-wzU" firstAttribute="leading" secondItem="3AJ-m4-3uh" secondAttribute="leading" id="amz-Y8-ZqW"/>
+                            <constraint firstItem="3AJ-m4-3uh" firstAttribute="top" secondItem="mfv-LM-gpT" secondAttribute="bottom" id="Ev3-sO-kkI"/>
+                            <constraint firstAttribute="bottom" secondItem="3AJ-m4-3uh" secondAttribute="bottom" id="XpO-SR-d3g"/>
+                            <constraint firstAttribute="trailing" secondItem="3AJ-m4-3uh" secondAttribute="trailing" id="gW2-5N-KnA"/>
+                            <constraint firstItem="3AJ-m4-3uh" firstAttribute="trailing" secondItem="eGD-RK-wzU" secondAttribute="trailing" id="njN-F8-eGg"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="textF" destination="eGD-RK-wzU" id="DSx-pr-uD2"/>
                         <outlet property="viewPhoto" destination="3AJ-m4-3uh" id="AMZ-kT-bm3"/>
@@ -131,7 +136,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MpT-EH-KZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="OCY-MC-NVR"/>
             </objects>
-            <point key="canvasLocation" x="1498.4000000000001" y="118.29085457271366"/>
+            <point key="canvasLocation" x="1488.8" y="115.59220389805098"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TKf-HT-7NG">

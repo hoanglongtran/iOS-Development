@@ -33,7 +33,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.dismiss(animated: true, completion: nil)
     }
     
-    var photoName:[String] = ["Sayori's Death", "Dead Space", "Lara's Death", "Black Hole", "Cate"]
+    //var photoName:[String] = ["Sayori's Death", "Dead Space", "Lara's Death", "Black Hole", "Cate"]
     var photo:[UIImage] = []
     
     
@@ -46,7 +46,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }*/
     
     
-    var temp:String = ""
+    var temp:UIImage = UIImage()
     
     
     
@@ -58,7 +58,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        ViewController.photoDes = Array(repeating: "Your Description", count: photoName.count)
+        ViewController.photoDes = Array(repeating: "Your Description", count: photo.count)
         return photo.count
     }
     
@@ -70,19 +70,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! photoThumbnail
         cell.photoThumb.image = photo[indexPath.row]
-        //cell.photoThumb.image = UIImage(named: photoName[indexPath.row])
         
+        //cell.photoThumb.image = UIImage(named: photoName[indexPath.row])
         //cell.textLabel?.text = ViewController.photoDes[indexPath.row]
         //cell.imageView?.image = UIImage(named: photoName[indexPath.row])
         return cell
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.collectionView!.reloadData()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let viewPhoto = segue.destination as! ViewPhoto
-        viewPhoto.currentPhotoName = temp
-        viewPhoto.photoList = photoName
+        viewPhoto.currentPhoto = temp
+        viewPhoto.photoList = photo
     }
     
     //func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -90,7 +92,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     //}
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        temp = photoName[indexPath.row]
+        temp = photo[indexPath.row]
         performSegue(withIdentifier: "segue", sender: self)
     }
     
