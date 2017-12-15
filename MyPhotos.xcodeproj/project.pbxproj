@@ -15,6 +15,8 @@
 		D2248D6E1FDFC93B005A3797 /* MyPhotosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2248D6D1FDFC93B005A3797 /* MyPhotosTests.swift */; };
 		D2248D791FDFC93B005A3797 /* MyPhotosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2248D781FDFC93B005A3797 /* MyPhotosUITests.swift */; };
 		D22A49641FE04514004ABE3F /* ViewPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22A49631FE04514004ABE3F /* ViewPhoto.swift */; };
+		D285D31A1FE2BAD0008B7BFA /* photoThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D285D3191FE2BAD0008B7BFA /* photoThumbnail.swift */; };
+		D285D31C1FE339BE008B7BFA /* Albumn in Resources */ = {isa = PBXBuildFile; fileRef = D285D31B1FE339BE008B7BFA /* Albumn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		D2248D781FDFC93B005A3797 /* MyPhotosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPhotosUITests.swift; sourceTree = "<group>"; };
 		D2248D7A1FDFC93B005A3797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D22A49631FE04514004ABE3F /* ViewPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewPhoto.swift; path = ../ViewPhoto.swift; sourceTree = "<group>"; };
+		D285D3191FE2BAD0008B7BFA /* photoThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoThumbnail.swift; sourceTree = "<group>"; };
+		D285D31B1FE339BE008B7BFA /* Albumn */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Albumn; path = ../../Albumn; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +107,11 @@
 				D2248D5A1FDFC93B005A3797 /* ViewController.swift */,
 				D22A49631FE04514004ABE3F /* ViewPhoto.swift */,
 				D2248D5C1FDFC93B005A3797 /* Main.storyboard */,
+				D285D3191FE2BAD0008B7BFA /* photoThumbnail.swift */,
 				D2248D5F1FDFC93B005A3797 /* Assets.xcassets */,
 				D2248D611FDFC93B005A3797 /* LaunchScreen.storyboard */,
 				D2248D641FDFC93B005A3797 /* Info.plist */,
+				D285D31B1FE339BE008B7BFA /* Albumn */,
 			);
 			path = MyPhotos;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2248D631FDFC93B005A3797 /* LaunchScreen.storyboard in Resources */,
+				D285D31C1FE339BE008B7BFA /* Albumn in Resources */,
 				D2248D601FDFC93B005A3797 /* Assets.xcassets in Resources */,
 				D2248D5E1FDFC93B005A3797 /* Main.storyboard in Resources */,
 			);
@@ -263,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2248D5B1FDFC93B005A3797 /* ViewController.swift in Sources */,
+				D285D31A1FE2BAD0008B7BFA /* photoThumbnail.swift in Sources */,
 				D22A49641FE04514004ABE3F /* ViewPhoto.swift in Sources */,
 				D2248D591FDFC93B005A3797 /* AppDelegate.swift in Sources */,
 			);

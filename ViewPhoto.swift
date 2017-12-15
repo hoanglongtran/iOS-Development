@@ -6,6 +6,7 @@
 //  Copyright © 2017 neX. All rights reserved.
 //  https://grokswift.com/uitextfield/
 //  https://stackoverflow.com/questions/31446237/how-to-edit-label-with-touch-ios-swift
+//  https://stackoverflow.com/questions/28696008/swipe-back-and-forth-through-array-of-images-swift
 
 import UIKit
 
@@ -18,8 +19,7 @@ class ViewPhoto: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var viewPhoto: UIImageView!
     @IBOutlet weak var textF: UITextField!
-    @IBOutlet weak var lbl: UILabel!
-    /*func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        /*func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let characterCountLimit = 140
         
         let startingLength = textField.text?.characters.count ?? 0
@@ -49,13 +49,10 @@ class ViewPhoto: UIViewController, UITextFieldDelegate {
         //let myVC = storyboard?.instantiateViewController(withIdentifier: "ViewPhoto") as! ViewPhoto
         
         
-        lbl.text = ViewController.photoDes[imageIndex]
+        textF.text = ViewController.photoDes[imageIndex]
         textF.delegate = self
-        textF.isHidden = true
-        lbl.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewPhoto.lblTapped))
-        tapGesture.numberOfTapsRequired = 1
-        lbl.addGestureRecognizer(tapGesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipedDir(gesture:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
@@ -65,29 +62,28 @@ class ViewPhoto: UIViewController, UITextFieldDelegate {
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
         
-        
-        
             // Do any additional setup after loading the view.
     }
     
-    func lblTapped(){
-        lbl.isHidden = true
-        textF.isHidden = false
-        textF.text = lbl.text
+    func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        textF.resignFirstResponder()
+        ViewController.photoDes[imageIndex] = textF.text!
     }
     
-    func textFieldShouldEndEditing(_ userText: UITextField) -> Bool {
+    
+    /*func textFieldShouldEndEditing(_ userText: UITextField) -> Bool {
+        
         userText.resignFirstResponder()
-        textF.isHidden = true
-        lbl.isHidden = false
-        lbl.text = textF.text
-        ViewController.photoDes[imageIndex] = textF.text!
+        
         return true
-    }
+    }*/
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        ViewController.photoDes[imageIndex] = textF.text!
         self.view.endEditing(true)
         return true;
     }
+    
+    
     func swipedDir(gesture: UIGestureRecognizer) {
         
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
@@ -108,7 +104,7 @@ class ViewPhoto: UIViewController, UITextFieldDelegate {
                 }
                 
                 viewPhoto.image = UIImage(named: photoList[imageIndex])
-                lbl.text = ViewController.photoDes[imageIndex]
+                textF.text = ViewController.photoDes[imageIndex]
                 
             case UISwipeGestureRecognizerDirection.left:
                 //println("User swiped Left")
@@ -126,7 +122,7 @@ class ViewPhoto: UIViewController, UITextFieldDelegate {
                 }
                 
                 viewPhoto.image = UIImage(named: photoList[imageIndex])
-                lbl.text = ViewController.photoDes[imageIndex]
+                textF.text = ViewController.photoDes[imageIndex]
             default:
                 break //stops the code/codes nothing.
             }
